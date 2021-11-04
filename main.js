@@ -3,7 +3,7 @@ import lineChart from './LineChart.js';
 import barChart from './barChart.js';
 //load the data in here
 //hello
-d3.csv('/national.csv', d3.autoType).then(data=>{
+d3.csv('national.csv', d3.autoType).then(data=>{
     console.log('national', data)
 
     const date_filter_national = data.filter(d=>d.date.getDay()==1)/*.then{
@@ -23,7 +23,7 @@ d3.csv('/national.csv', d3.autoType).then(data=>{
 
 
 
-d3.csv('/vaccine.csv', d3.autoType).then(data_2=>{
+d3.csv('vaccine.csv', d3.autoType).then(data_2=>{
     console.log('covid', data_2)
 
     const date_filter_2 = data_2.filter(d=>d.date.getDay()==1)
