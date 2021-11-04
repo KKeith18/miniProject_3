@@ -100,10 +100,11 @@ export default function barChart(container){
             .attr('y', d => yScale(d[type]))
             .attr('width', xScale.bandwidth())
             .attr('height', d => height - yScale(d[type]))
-            .style("opacity", .5)
+            .style("opacity", .75)
             .attr('fill', 'red')
             .attr("class","bar");
             }
+
         else if (type == 'cases'){
             bars.enter()
             .append('rect')
@@ -136,11 +137,12 @@ export default function barChart(container){
             .attr('y', d => yScale(d[type]))
             .attr('width', xScale.bandwidth())
             .attr('height', d => height - yScale(d[type]))
-            .style("opacity", .5)
+            .style("opacity", .75)
             .attr('fill', '#69a3b2')
             .attr("class","bar");
 
         }
+
 
         else if (type == 'death_rate'){
             bars.enter()
@@ -178,7 +180,7 @@ export default function barChart(container){
             .attr('y', d => yScale(d[type]))
             .attr('width', xScale.bandwidth())
             .attr('height', d => height - yScale(d[type]))
-            .style("opacity", .5)
+            .style("opacity", .75)
             .attr('fill', 'red')
             .attr("class","bar");
 
@@ -219,7 +221,7 @@ export default function barChart(container){
             .attr('y', d => yScale(d[type]))
             .attr('width', xScale.bandwidth())
             .attr('height', d => height - yScale(d[type]))
-            .style("opacity", .5)
+            .style("opacity", .75)
             .attr('fill', '#69a3b2')
             .attr("class","bar");
 
@@ -259,6 +261,16 @@ export default function barChart(container){
             .attr("dy", ".75em")
             .attr("transform", "rotate(-90)")
             .text('Daily Vaccinations (per million)');
+        }
+
+        else if (type == 'deaths') {
+            svg.select(".y")
+            .attr("class", "y label")
+            .attr("text-anchor", "end")
+            .attr("y", -50)
+            .attr("dy", ".75em")
+            .attr("transform", "rotate(-90)")
+            .text('Deaths');
         }
 
         else if (type == 'cases') {
@@ -328,7 +340,7 @@ export default function barChart(container){
             svg.append('text').text('MASSACHUSETTS').attr('x', 50).attr('y', +25).attr('font-size', 25);}
         else if (data[0].state == 'Mississippi' || data[0].location == 'Mississippi') {
             svg.append('text').text('MISSISSIPPI').attr('x', 50).attr('y', +25).attr('font-size', 25);}
-        else if (data[0].Entity == 'World') {
+        else if (data[0].Entity == 'United States') {
             svg.append('text').text('NATIONAL DATA').attr('x', 50).attr('y', +25).attr('font-size', 25);}
   }
 

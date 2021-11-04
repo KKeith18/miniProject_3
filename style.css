@@ -14,12 +14,14 @@ body{
     font-size: 20px;
     background-color:red;
     border-radius:5px;
+    padding:5px;
 }
 .key1{
     background-color: blue;
     font-size: 20px;
     color: white;
     border-radius:5px;
+    padding:5px;
 }
 .kk{
     color: black;
